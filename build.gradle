@@ -1,0 +1,35 @@
+plugins {
+  id 'groovy'
+}
+
+sourceSets {
+
+  main {
+    groovy {
+      srcDirs = ['src', 'vars']
+    }
+  }
+
+  test {
+    groovy {
+      srcDirs = ['test']
+    }
+  }
+
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'org.codehaus.groovy:groovy-all:2.5.+'
+
+  testCompile 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+  testCompile 'com.lesfurets:jenkins-pipeline-unit:1.1'
+
+}
+
+test {
+  useJUnitPlatform()
+}
