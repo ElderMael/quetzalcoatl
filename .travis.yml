@@ -1,4 +1,5 @@
 language: java
 
 script:
-  - ./gradlew test -i
+  - jdk_switcher use oraclejdk8
+  - ./gradlew clean test -i
