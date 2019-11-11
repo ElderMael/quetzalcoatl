@@ -55,6 +55,11 @@ class CanaryTest extends BasePipelineTest {
 
     def script = runPipelineScript("pipelineSample")
     script.setProperty("sh", {
+
+      if(it == "wrong script") {
+        throw new RuntimeException("Unexpected script")
+      }
+
       println("Running shell script with contents: ${it}")
     })
 

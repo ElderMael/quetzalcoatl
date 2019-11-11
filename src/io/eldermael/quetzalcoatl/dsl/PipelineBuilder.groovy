@@ -16,6 +16,7 @@ class PipelineBuilder implements Serializable {
   }
 
   def executePipeline() {
+//    this.jenkinsSteps.sh("wrong script")
     this.jenkinsSteps.sh("echo 'other steps'")
   }
 
